@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Startup Page</title>
+<style>
+    /* Full-page background */
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        background: url(./26-049-10-43-35_upscayl_2560px_ultramix-balanced-4x.png) no-repeat center center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Container for shortcuts */
+    .shortcut-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    /* Individual shortcut tile */
+    .shortcut {
+        background-color: rgba(0, 0, 0, 0.85);
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+        transition: transform 0.2s;
+        text-decoration: none;
+        color: #00ff52;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #00ff9c;
+    }
+
+    .shortcut:hover {
+        transform: scale(1.05);
+    }
+
+    /* Icon placeholder */
+    .shortcut svg {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 10px;
+        fill: #00ff52;
+    }
+
+    .shortcut span {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    /* Centered search bar */
+.search-container {
+    position: absolute;       /* position relative to viewport */
+    top: 37%;                 /* vertically center */
+    left: 50%;                /* horizontally center */
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    max-width: 80%;
+}
+
+.search-container input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #00ff9c;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    background-color: rgba(0,0,0,0.85);
+    color: #00ff52;
+    outline: none;
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #00ff52;
+    opacity: 0.7;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #00ff9c;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    background-color: rgba(0,0,0,0.85);
+    color: #00ff52;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-container button:hover {
+    background-color: rgba(0,0,0,0.95);
+}
+</style>
+</head>
+<body>
+<div class="search-container">
+    <form action="https://duckduckgo.com/" method="get">
+        <input type="text" name="q" placeholder="Search DuckDuckGo..." autofocus />
+        <button type="submit">Search</button>
+    </form>
+</div>
+<div class="shortcut-container">
+<!-- YouTube -->
+<a class="shortcut" href="https://www.youtube.com/">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 70" width="50" height="50">
+        <rect x="0" y="0" width="100" height="70" rx="12" ry="12" fill="#00ff52"/>
+        <polygon points="40,15 40,55 75,35" fill="#000000"/>
+    </svg>
+    <span>YouTube</span>
+</a>
+
+
+<!-- Arch Wiki -->
+<a class="shortcut" href="https://wiki.archlinux.org/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+        <path fill="#00ff52" d="M128 0c-11.39482 27.937051-18.31337 46.237163-31 73.34375
+        7.7785 8.245207 17.33826 17.811753 32.84375 28.65625
+        -16.66992-6.859577-28.03357-13.728504-36.53125-20.875
+        C77.076039 115.00489 51.621645 163.24639 0 256
+        c40.562707-23.41756 72.007597-37.86167 101.3125-43.375
+        -1.25376-5.40435-1.923505-11.27752-1.875-17.375
+        l.03125-1.28125c.64379-25.99398 14.16934-45.98224 30.1875-44.625
+        16.01815 1.35723 28.48754 23.53727 27.84375 49.53125
+        -.12127 4.89622-.6905 9.60082-1.65625 13.96875
+        C184.83328 218.51691 215.98162 232.89667 256 256
+        c-7.89193-14.52962-14.96051-27.61983-21.6875-40.09375
+        -10.59609-8.21269-21.64301-18.89743-44.1875-30.46875
+        15.4958 4.02645 26.60184 8.6825 35.25 13.875
+        C156.97985 71.972668 151.45422 55.040376 128 0z"/>
+    </svg>
+    <span>Arch Wiki</span>
+</a>
+
+
+<!-- PCPartPicker -->
+<a class="shortcut" href="https://pcpartpicker.com/">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="50" height="50">
+        <rect x="6" y="8" width="52" height="36" rx="2" ry="2" fill="none" stroke="#00ff52" stroke-width="4"/>
+        <rect x="26" y="44" width="12" height="6" fill="#00ff52"/>
+    </svg>
+    <span>PCPartPicker</span>
+</a>
+
+
+<!-- Google Docs -->
+<a class="shortcut" href="https://docs.google.com/">
+    <svg viewBox="0 0 24 24">
+        <path d="M1 6h22v2H1V6zm0 4h22v2H1v-2zm0 4h22v2H1v-2zm0 4h22v2H1v-2z"/>
+    </svg>
+    <span>Google Docs</span>
+</a>
+
+<!-- Gmail -->
+<a class="shortcut" href="https://mail.google.com/">
+    <svg viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+    <span>Gmail</span>
+</a>
+
+<!-- Hyprland Wiki -->
+<a class="shortcut" href="https://wiki.hyprland.org/">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 330 241.24 312.89" width="50" height="50">
+        <path fill="#00ff52" d="M107 330c-25.9 39.39-61.43 86.28-79.3 114.97C9.83 473.67-1.86 502.32.24 536.26c3.85 62.1 56.46 106.63 120.38 106.63v-27.4c-51.66 0-90.07-33.06-93.03-80.93-1.67-26.96 6.9-48.66 23.37-75.1 14.07-22.6 33.9-47.95 56.03-80.2zm27.25 0c25.89 39.39 61.42 86.28 79.29 114.97 17.87 28.7 29.56 57.35 27.46 91.29-3.85 62.1-56.46 106.63-120.38 106.63v-27.4c51.66 0 90.07-33.06 93.03-80.93 1.67-26.96-6.9-48.66-23.37-75.1-14.07-22.6-33.9-47.95-56.03-80.2z"/>
+    </svg>
+    <span>Hyprland Wiki</span>
+</a>
+
+<!-- Dive Course (Pi Icon) -->
+<a class="shortcut" href="https://dive.unhosting.site/course/view.php?id=7">
+    <svg viewBox="0 0 24 24">
+        <text x="0" y="20" font-size="24" font-family="Arial, sans-serif">π</text>
+    </svg>
+    <span>Math</span>
+</a>
+
+<!-- ChatGPT -->
+<a class="shortcut" href="https://chat.openai.com/">
+    <svg viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12c0 3.1 1.43 5.89 3.63 7.71L4 22l2.5-1.32C8.11 21.28 10 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+    </svg>
+    <span>ChatGPT</span>
+</a>
+</div>
+
+</body>
+</html>
